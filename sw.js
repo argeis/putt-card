@@ -1,6 +1,6 @@
 // Putt Card offline worker.
 // Bump VERSION whenever you upload changed files, so phones pick up the new copy.
-const VERSION = 'puttcard-v3';
+const VERSION = 'puttcard-v4';
 const FONT_CACHE = 'puttcard-fonts';
 const CORE = [
   './',

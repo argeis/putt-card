@@ -1,7 +1,9 @@
 // Putt Card offline worker.
 // Bump VERSION whenever you upload changed files, so phones pick up the new copy.
-const VERSION = 'puttcard-v4';
-const FONT_CACHE = 'puttcard-fonts';
+// Only caches starting with PREFIX are ever deleted: Cache Storage is shared by every app on this origin.
+const PREFIX = 'puttcard-';
+const VERSION = PREFIX + 'v5';
+const FONT_CACHE = PREFIX + 'fonts';
 const CORE = [
   './',
   './index.html',
@@ -20,7 +22,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION && k !== FONT_CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith(PREFIX) && k !== VERSION && k !== FONT_CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });

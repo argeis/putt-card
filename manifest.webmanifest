@@ -1,10 +1,10 @@
 {
-  "id": "putt-card/",
+  "id": "/putt-card/",
   "name": "Putt Card",
   "short_name": "Putt Card",
   "description": "Minigolf scorecard for any number of players. One tap per score.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/putt-card/",
+  "scope": "/putt-card/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#EEF3EE",
